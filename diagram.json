@@ -62,6 +62,41 @@
       "top": 124.8,
       "left": -115.2,
       "attrs": { "text": "Windy" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": -105.6,
+      "left": 48,
+      "attrs": { "text": "GPS sensor" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": -19.2,
+      "left": 163.2,
+      "attrs": { "text": "GPS activation button" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text6",
+      "top": 96,
+      "left": 297.6,
+      "attrs": { "text": "OLED displaying the current weather" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text7",
+      "top": 211.2,
+      "left": 297.6,
+      "attrs": { "text": "OLED displaying weather information for 12 hours" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text8",
+      "top": 288,
+      "left": -9.6,
+      "attrs": { "text": "change graph type button" }
     }
   ],
   "connections": [
