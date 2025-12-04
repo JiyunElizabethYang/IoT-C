@@ -22,3 +22,6 @@ This repository contains our Weather Tracker IoT system for the IoT course.
 ## Branch Structure
 - `main`: project description, reports, source code
 - `homepage`: project web page (GitHub Pages)
+
+## 🌍 Project Homapage
+👉 **[IoT-C Project Homepage](https://jiyunelizabethyang.github.io/IoT-C/)**
