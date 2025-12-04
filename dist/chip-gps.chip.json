@@ -1,0 +1,12 @@
+{
+  "name": "chip-gps",
+  "author": "박지호",
+  "width": 40,
+  "height": 40,
+  "pins": [
+    "VCC",
+    "GND",
+    "TX",
+    "RX"
+  ]
+}
