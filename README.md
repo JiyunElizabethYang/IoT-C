@@ -10,9 +10,9 @@ This repository contains our Weather Tracker IoT system for the IoT course.
 - Uses LEDs to indicate weather status (sunny, rainy, windy)
 
 ## Group Members
-- Yang Jiyun (22011901)
-- (멤버2 이름)
-- (멤버3 이름)
+- 21011864 Park Jeongmin
+- 21011910 Park Jiho (leader)
+- 22011901 Yang Jiyun
 
 ## Tools & Technologies
 - ESP32 + Wokwi simulator
@@ -23,3 +23,6 @@ This repository contains our Weather Tracker IoT system for the IoT course.
 ## Branch Structure
 - `main`: project description, reports, source code
 - `homepage`: project web page (GitHub Pages)
+
+## 🌍 Project Homapage
+👉 **[IoT-C Project Homepage](https://jiyunelizabethyang.github.io/IoT-C/)**
