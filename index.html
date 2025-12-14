@@ -134,7 +134,7 @@
       border-radius: 15px;
       padding: 1rem 1.1rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-      background: linear-gradient(45deg, rgba(0,242,96,0.10), rgba(0,119,255,0.10));
+      background: linear-gradient(45deg, rgba(5,117,230,0.12), rgba(121,40,202,0.12));
       border: 1px solid rgba(0,0,0,0.06);
     }
 
@@ -332,7 +332,6 @@
       </div>
     </div>
   </section>
-
   <!-- Overview -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
@@ -340,20 +339,45 @@
         <div class="column is-full">
           <div class="content">
             <h2 class="title is-3"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
-                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
-              Overview
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
+                      color: white;
+                      padding: 10px;
+                      border-radius: 10px;
+                      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                      text-align: center;">
+              Project Overview
             </h2>
 
             <div class="content has-text-justified">
-              <strong>Overview of Weather Tracker IoT (Tracking Real-time Weather)</strong><br>
-              : Receives weather data from KMA through its API Hub, simulates a custom GPS location, and generates LED signals and graphs on an OLED display.
+              <p>
+                <strong>
+                  <span style="font-size: 1.15em; font-weight: 800;">
+                    Weather Tracker IoT
+                  </span>
+                  is a software-based IoT project that simulates an ESP32 system using VS Code and Wokwi.
+                </strong>
+              </p>
+
+              <p>
+                - The system retrieves real-time weather data from the Korea Meteorological Administration (KMA)
+                through its API Hub and uses simulated GPS coordinates to provide location-based weather information.
+              </p>
+
+              <p>
+                - Based on the retrieved data, the system generates virtual sensor outputs and visual indicators,
+                including LED signals and graphical visualizations on an OLED display, representing weather conditions
+                such as temperature, humidity, rainfall, and wind.
+              </p>
+
+              <p>
+                - All processed information is presented in real time, demonstrating the integration of external
+                data sources, location awareness, and sensor visualization within a fully virtual IoT framework.
               </p>
 
               <!-- centered image -->
               <div class="has-text-centered">
-                <img src="static\images\overview photo.png" alt="Teaser GIF"
-                     style="max-width: 100%; height: auto; display: inline-block;">
+                <img src="static/images/overview photo.png" alt="Overview Image"
+                    style="max-width: 100%; height: auto; display: inline-block;">
               </div>
 
               <p class="subtitle has-text-centered"></p>
