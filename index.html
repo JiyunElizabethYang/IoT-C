@@ -2,23 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
+
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,82 +89,60 @@
       margin: 0 0.3rem;
     }
 
-    /* Timeline styling */
-    .timeline-wrap {
+    /* Shared layout helper for stacks */
+    .stack-wrap {
       margin-top: 1rem;
       display: grid;
       gap: 1rem;
     }
 
+    /* =========================
+       SECTION CARDS (DIFFERENT COLORS)
+       ========================= */
+
+    /* Method flow cards - Color Set 1 */
+    .flow-card {
+      border-radius: 15px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+      background: linear-gradient(45deg, rgba(0,119,255,0.14), rgba(242,0,181,0.10));
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .flow-card ul { margin-top: 0.5rem; }
+    .flow-card li { margin: 0.35rem 0; line-height: 1.4; }
+
+    /* Timeline cards - Color Set 2 */
     .timeline-card {
       border-radius: 15px;
       padding: 1rem 1.1rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-      background: linear-gradient(45deg, rgba(5,117,230,0.15), rgba(121,40,202,0.15));
+      background: linear-gradient(45deg, rgba(5,117,230,0.14), rgba(121,40,202,0.14));
       border: 1px solid rgba(0,0,0,0.06);
     }
-
     .timeline-week {
       font-weight: 800;
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
     }
+    .timeline-card ul { margin-top: 0.5rem; }
+    .timeline-card li { margin: 0.35rem 0; line-height: 1.4; }
 
-    .timeline-card ul {
-      margin-top: 0.5rem;
-    }
-
-    .timeline-card li {
-      margin: 0.35rem 0;
-      line-height: 1.4;
-    }
-
-    /* Benefits styling */
-    .benefits-wrap {
-      margin-top: 1rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .benefit-card {
-      border-radius: 15px;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-      background: linear-gradient(45deg, rgba(5,117,230,0.12), rgba(121,40,202,0.12));
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .benefit-title {
-      font-weight: 900;
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .benefit-card p {
-      margin-top: 0.4rem;
-      line-height: 1.5;
-    }
-
-    /* Roles styling */
+    /* Roles cards - Color Set 3 */
     .roles-grid {
       margin-top: 1rem;
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(12, 1fr);
     }
-
     .role-card {
       grid-column: span 12;
       border-radius: 15px;
       padding: 1rem 1.1rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-      background: linear-gradient(45deg, rgba(242,0,181,0.10), rgba(0,119,255,0.10));
+      background: linear-gradient(45deg, rgba(121,40,202,0.12), rgba(5,117,230,0.10));
       border: 1px solid rgba(0,0,0,0.06);
     }
-
-    @media (min-width: 900px) {
-      .role-card { grid-column: span 4; }
-    }
+    @media (min-width: 900px) { .role-card { grid-column: span 4; } }
 
     .role-header {
       display: flex;
@@ -194,10 +168,7 @@
       border-bottom: 2px solid rgba(121,40,202,0.25);
       padding-bottom: 2px;
     }
-
-    .role-name a:hover {
-      border-bottom-color: rgba(121,40,202,0.6);
-    }
+    .role-name a:hover { border-bottom-color: rgba(121,40,202,0.6); }
 
     .badges {
       display: flex;
@@ -215,20 +186,13 @@
       border: 1px solid rgba(121,40,202,0.25);
       white-space: nowrap;
     }
-
     .role-badge.alt {
       background: rgba(5,117,230,0.16);
       border: 1px solid rgba(5,117,230,0.25);
     }
 
-    .role-card ul {
-      margin-top: 0.5rem;
-    }
-
-    .role-card li {
-      margin: 0.35rem 0;
-      line-height: 1.4;
-    }
+    .role-card ul { margin-top: 0.5rem; }
+    .role-card li { margin: 0.35rem 0; line-height: 1.4; }
   </style>
 </head>
 
@@ -274,7 +238,6 @@
 
             <div class="column has-text-centered">
               <div class="publication-links">
-
                 <span class="link-block">
                   <a href="https://github.com/zubair1811" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
@@ -294,7 +257,6 @@
                     <span>Code</span>
                   </a>
                 </span>
-
               </div>
             </div>
 
@@ -304,6 +266,7 @@
     </div>
   </section>
 
+  <!-- Welcome -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -315,9 +278,7 @@
               Welcome to Weather Tracker IoT Project
             </h2>
 
-            <div class="level-set has-text-justified">
-              <p></p>
-            </div>
+            <div class="level-set has-text-justified"><p></p></div>
 
             <div style="border: none; border-radius: 15px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
                         overflow: hidden; background: linear-gradient(45deg, #0575e6, #7928ca81); padding: 10px;">
@@ -332,7 +293,8 @@
       </div>
     </div>
   </section>
-  <!-- Overview -->
+
+  <!-- Project Overview -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -340,20 +302,15 @@
           <div class="content">
             <h2 class="title is-3"
                 style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                      color: white;
-                      padding: 10px;
-                      border-radius: 10px;
-                      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-                      text-align: center;">
+                      color: white; padding: 10px; border-radius: 10px;
+                      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
               Project Overview
             </h2>
 
             <div class="content has-text-justified">
               <p>
                 <strong>
-                  <span style="font-size: 1.15em; font-weight: 800;">
-                    Weather Tracker IoT
-                  </span>
+                  <span style="font-size: 1.15em; font-weight: 800;">Weather Tracker IoT</span>
                   is a software-based IoT project that simulates an ESP32 system using VS Code and Wokwi.
                 </strong>
               </p>
@@ -374,10 +331,9 @@
                 data sources, location awareness, and sensor visualization within a fully virtual IoT framework.
               </p>
 
-              <!-- centered image -->
               <div class="has-text-centered">
                 <img src="static/images/overview photo.png" alt="Overview Image"
-                    style="max-width: 100%; height: auto; display: inline-block;">
+                     style="max-width: 100%; height: auto; display: inline-block;">
               </div>
 
               <p class="subtitle has-text-centered"></p>
@@ -390,108 +346,109 @@
 
   <!-- Method -->
   <section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
 
-          <h2 class="title is-3"
-              style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                     color: white; padding: 10px; border-radius: 10px;
-                     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
-            Method
-          </h2>
+            <!-- ✅ Method title width now matches others (same structure & container) -->
+            <h2 class="title is-3"
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
+                       color: white; padding: 10px; border-radius: 10px;
+                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+              Method
+            </h2>
 
-          <!-- Flow Diagram -->
-          <div class="timeline-wrap">
+            <!-- Flow Diagram -->
+            <div class="stack-wrap">
 
-            <div class="timeline-card">
-              <strong>GPS Module</strong>
-              <ul>
-                <li>Runs a lightweight web server</li>
-                <li>Obtains the device’s internet IP address</li>
-              </ul>
-            </div>
+              <div class="flow-card">
+                <strong>GPS Module</strong>
+                <ul>
+                  <li>Runs a lightweight web server</li>
+                  <li>Obtains the device’s internet IP address</li>
+                </ul>
+              </div>
 
-            <div class="has-text-centered">⬇</div>
+              <div class="has-text-centered">⬇</div>
 
-            <div class="timeline-card">
-              <strong>IP-Based Location Detection</strong>
-              <ul>
-                <li>Converts the IP address into a geographic location</li>
-                <li>Sets latitude and longitude coordinates</li>
-              </ul>
-            </div>
+              <div class="flow-card">
+                <strong>IP-Based Location Detection</strong>
+                <ul>
+                  <li>Converts the IP address into an approximate geographic location</li>
+                  <li>Sets latitude and longitude coordinates</li>
+                </ul>
+              </div>
 
-            <div class="has-text-centered">⬇</div>
+              <div class="has-text-centered">⬇</div>
 
-            <div class="timeline-card">
-              <strong>KMA API Hub</strong>
-              <ul>
-                <li>Retrieves real-time weather data in XML format</li>
-              </ul>
-            </div>
+              <div class="flow-card">
+                <strong>KMA API Hub</strong>
+                <ul>
+                  <li>Retrieves real-time weather data in XML format</li>
+                </ul>
+              </div>
 
-            <div class="has-text-centered">⬇</div>
+              <div class="has-text-centered">⬇</div>
 
-            <div class="timeline-card">
-              <strong>Weather Data Parsing Module</strong>
-              <ul>
-                <li>Temperature</li>
-                <li>Humidity</li>
-                <li>Rainfall</li>
-                <li>Wind Speed</li>
-                <li>Current Time</li>
-              </ul>
-            </div>
+              <div class="flow-card">
+                <strong>Weather Data Parsing Module</strong>
+                <ul>
+                  <li>Temperature</li>
+                  <li>Humidity</li>
+                  <li>Rainfall</li>
+                  <li>Wind speed</li>
+                  <li>Current time</li>
+                </ul>
+              </div>
 
-            <div class="has-text-centered">⬇</div>
+              <div class="has-text-centered">⬇</div>
 
-            <div class="columns is-centered">
-              <div class="column is-6">
-                <div class="timeline-card">
-                  <strong>OLED Display #1 (Text Output)</strong>
-                  <ul>
-                    <li>Location information</li>
-                    <li>Weather conditions</li>
-                    <li>Current time</li>
-                  </ul>
+              <div class="columns is-centered">
+                <div class="column is-6">
+                  <div class="flow-card">
+                    <strong>OLED Display #1 (Text Output)</strong>
+                    <ul>
+                      <li>Location information</li>
+                      <li>Weather conditions</li>
+                      <li>Current time</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="column is-6">
+                  <div class="flow-card">
+                    <strong>OLED Display #2 (Graph Output)</strong>
+                    <ul>
+                      <li>Temperature graph</li>
+                      <li>Humidity graph</li>
+                      <li>Rainfall graph</li>
+                      <li>Wind speed graph</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div class="column is-6">
-                <div class="timeline-card">
-                  <strong>OLED Display #2 (Graph Output)</strong>
-                  <ul>
-                    <li>Temperature graph</li>
-                    <li>Humidity graph</li>
-                    <li>Rainfall graph</li>
-                    <li>Wind speed graph</li>
-                  </ul>
-                </div>
+              <div class="has-text-centered">⬇</div>
+
+              <div class="flow-card">
+                <strong>Virtual LED Indicators</strong>
+                <ul>
+                  <li><strong>Red</strong>: Sunny</li>
+                  <li><strong>Blue</strong>: Rainy</li>
+                  <li><strong>Yellow</strong>: Windy</li>
+                </ul>
               </div>
-            </div>
 
-            <div class="has-text-centered">⬇</div>
+            </div><!-- /stack-wrap -->
 
-            <div class="timeline-card">
-              <strong>Virtual LED Indicators</strong>
-              <ul>
-                <li><strong>Red</strong>: Sunny</li>
-                <li><strong>Blue</strong>: Rainy</li>
-                <li><strong>Yellow</strong>: Windy</li>
-              </ul>
-            </div>
-
-          </div><!-- /flow diagram -->
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Benefits (NEW) -->
+  <!-- Benefits (UPDATED: plain text, no cards) -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -504,31 +461,34 @@
               Benefits
             </h2>
 
-            <div class="benefits-wrap">
-              <div class="benefit-card">
-                <div class="benefit-title">1. Real-Time Weather Monitoring</div>
-                <p>
-                  The system enables real-time tracking of weather conditions by retrieving live data from the Korea Meteorological Administration (KMA) API.
-                  This allows users to access up-to-date information such as temperature, humidity, rainfall, wind speed, and time.
-                </p>
-              </div>
+            <div class="content has-text-justified">
+              <p>
+                <strong>
+                  Benefits of the Weather Tracker IoT Project
+                </strong>
+              </p>
 
-              <div class="benefit-card">
-                <div class="benefit-title">2. Location-Based Weather Visualization</div>
-                <p>
-                  By simulating GPS coordinates and converting them into city and district names, the project provides location-specific weather information.
-                  This makes the system more realistic and demonstrates how IoT services can adapt data based on geographic location.
-                </p>
-              </div>
+              <p>
+                <strong>1. Real-Time Weather Monitoring</strong><br>
+                The system enables real-time tracking of weather conditions by retrieving live data from the Korea
+                Meteorological Administration (KMA) API. This allows users to access up-to-date information such as
+                temperature, humidity, rainfall, wind speed, and time.
+              </p>
 
-              <div class="benefit-card">
-                <div class="benefit-title">3. Effective Data Visualization</div>
-                <p>
-                  Weather data is presented using LED indicators and OLED graphs, making complex information easy to understand at a glance.
-                  For example, different LED colors represent different weather conditions, and graphs visually show changes in temperature, humidity, rainfall, and wind speed.
-                </p>
-              </div>
-            </div><!-- /benefits-wrap -->
+              <p>
+                <strong>2. Location-Based Weather Visualization</strong><br>
+                By simulating GPS coordinates and converting them into city and district names, the project provides
+                location-specific weather information. This makes the system more realistic and demonstrates how IoT
+                services can adapt data based on geographic location.
+              </p>
+
+              <p>
+                <strong>3. Effective Data Visualization</strong><br>
+                Weather data is presented using LED indicators and OLED graphs, making complex information easy to
+                understand at a glance. For example, different LED colors represent different weather conditions, and
+                graphs visually show changes in temperature, humidity, rainfall, and wind speed.
+              </p>
+            </div>
 
           </div>
         </div>
@@ -549,7 +509,7 @@
               Timeline
             </h2>
 
-            <div class="timeline-wrap">
+            <div class="stack-wrap">
 
               <div class="timeline-card">
                 <div class="timeline-week">Week 9 – 10</div>
@@ -588,7 +548,7 @@
                 </ul>
               </div>
 
-            </div><!-- /timeline-wrap -->
+            </div><!-- /stack-wrap -->
 
           </div>
         </div>
@@ -692,10 +652,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Statcounter tracking code -->
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-  <!-- End of Statcounter Code -->
 
 </body>
 </html>
