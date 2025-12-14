@@ -51,11 +51,11 @@ The system follows a modular workflow:
 
 - **Jeongmin Park**  
   - Weather API integration  
-  - XML data parsing and graph visualization logic  
+  - XML data parsing and graph visualization logic
 
 - **Jiyun Yang**  
-  - OLED display implementation  
-  - LED control logic and presentation materials  
+  - OLED and LED display implementation  
+  - Presentation materials preparation (webpage, GitHub, PPT, etc.)
 
 ---
 
