@@ -123,6 +123,32 @@
       line-height: 1.4;
     }
 
+    /* Benefits styling */
+    .benefits-wrap {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .benefit-card {
+      border-radius: 15px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+      background: linear-gradient(45deg, rgba(0,242,96,0.10), rgba(0,119,255,0.10));
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .benefit-title {
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .benefit-card p {
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+
     /* Roles styling */
     .roles-grid {
       margin-top: 1rem;
@@ -146,7 +172,7 @@
 
     .role-header {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
       margin-bottom: 0.6rem;
@@ -156,16 +182,43 @@
       font-weight: 900;
       font-size: 1.15rem;
       margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .role-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(121,40,202,0.25);
+      padding-bottom: 2px;
+    }
+
+    .role-name a:hover {
+      border-bottom-color: rgba(121,40,202,0.6);
+    }
+
+    .badges {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .role-badge {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
       background: rgba(121,40,202,0.18);
       border: 1px solid rgba(121,40,202,0.25);
       white-space: nowrap;
+    }
+
+    .role-badge.alt {
+      background: rgba(5,117,230,0.16);
+      border: 1px solid rgba(5,117,230,0.25);
     }
 
     .role-card ul {
@@ -257,9 +310,8 @@
         <div class="column is-full">
           <div class="content">
             <h2 class="title is-3 has-text-centered"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                       color: white; padding: 10px; border-radius: 10px;
-                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
               Welcome to Weather Tracker IoT Project
             </h2>
 
@@ -270,8 +322,7 @@
             <div style="border: none; border-radius: 15px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
                         overflow: hidden; background: linear-gradient(45deg, #0575e6, #7928ca81); padding: 10px;">
               <video poster="" id="tree" autoplay controls muted loop height="100%"
-                     style="display: block; width: 100%; border-radius: 15px;
-                            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+                     style="display: block; width: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
                 <source src="static/videos/pet-demo.mp4" type="video/mp4">
               </video>
             </div>
@@ -289,9 +340,8 @@
         <div class="column is-full">
           <div class="content">
             <h2 class="title is-3"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                       color: white; padding: 10px; border-radius: 10px;
-                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
               Overview
             </h2>
 
@@ -300,7 +350,7 @@
               : Receives weather data from KMA through its API Hub, simulates a custom GPS location, and generates LED signals and graphs on an OLED display.
               </p>
 
-              <!-- ✅ Centered image (UPDATED) -->
+              <!-- centered image -->
               <div class="has-text-centered">
                 <img src="static\images\overview photo.png" alt="Teaser GIF"
                      style="max-width: 100%; height: auto; display: inline-block;">
@@ -308,7 +358,6 @@
 
               <p class="subtitle has-text-centered"></p>
             </div>
-
           </div>
         </div>
       </div>
@@ -321,11 +370,9 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <div class="content">
-
             <h2 class="title is-3"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                       color: white; padding: 10px; border-radius: 10px;
-                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
               Method
             </h2>
 
@@ -350,6 +397,51 @@
     </div>
   </section>
 
+  <!-- Benefits (NEW) -->
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+
+            <h2 class="title is-3"
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+              Benefits
+            </h2>
+
+            <div class="benefits-wrap">
+              <div class="benefit-card">
+                <div class="benefit-title">1. Real-Time Weather Monitoring</div>
+                <p>
+                  The system enables real-time tracking of weather conditions by retrieving live data from the Korea Meteorological Administration (KMA) API.
+                  This allows users to access up-to-date information such as temperature, humidity, rainfall, wind speed, and time.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-title">2. Location-Based Weather Visualization</div>
+                <p>
+                  By simulating GPS coordinates and converting them into city and district names, the project provides location-specific weather information.
+                  This makes the system more realistic and demonstrates how IoT services can adapt data based on geographic location.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-title">3. Effective Data Visualization</div>
+                <p>
+                  Weather data is presented using LED indicators and OLED graphs, making complex information easy to understand at a glance.
+                  For example, different LED colors represent different weather conditions, and graphs visually show changes in temperature, humidity, rainfall, and wind speed.
+                </p>
+              </div>
+            </div><!-- /benefits-wrap -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Timeline -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
@@ -358,9 +450,8 @@
           <div class="content">
 
             <h2 class="title is-3"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                       color: white; padding: 10px; border-radius: 10px;
-                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
               Timeline
             </h2>
 
@@ -411,7 +502,7 @@
     </div>
   </section>
 
-  <!-- Roles (NEW) -->
+  <!-- Roles -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -419,9 +510,8 @@
           <div class="content">
 
             <h2 class="title is-3"
-                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
-                       color: white; padding: 10px; border-radius: 10px;
-                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7); color: white;
+                       padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
               Roles
             </h2>
 
@@ -429,8 +519,13 @@
 
               <div class="role-card">
                 <div class="role-header">
-                  <p class="role-name">Jiho Park</p>
-                  <span class="role-badge">Leader</span>
+                  <p class="role-name">
+                    <a href="https://parkjh21c.github.io/IoT-Project-C/" target="_blank" rel="noopener noreferrer">Jiho Park</a>
+                  </p>
+                  <div class="badges">
+                    <span class="role-badge">Leader</span>
+                    <span class="role-badge alt">GPS</span>
+                  </div>
                 </div>
                 <ul>
                   <li>Implemented the GPS module (hosted a web server and retrieved the current location).</li>
@@ -441,8 +536,13 @@
 
               <div class="role-card">
                 <div class="role-header">
-                  <p class="role-name">Jeongmin Park</p>
-                  <span class="role-badge">Data & Visualization</span>
+                  <p class="role-name">
+                    <a href="https://jungminpark68.github.io/IoT-Project-C/" target="_blank" rel="noopener noreferrer">Jeongmin Park</a>
+                  </p>
+                  <div class="badges">
+                    <span class="role-badge">Data</span>
+                    <span class="role-badge alt">Visualization</span>
+                  </div>
                 </div>
                 <ul>
                   <li>Integrated the weather API and handled data processing.</li>
@@ -452,8 +552,13 @@
 
               <div class="role-card">
                 <div class="role-header">
-                  <p class="role-name">Jiyun Yang</p>
-                  <span class="role-badge">Display & Presentation</span>
+                  <p class="role-name">
+                    <a href="https://jiyunelizabethyang.github.io/Weather_Tracker_IoT/" target="_blank" rel="noopener noreferrer">Jiyun Yang</a>
+                  </p>
+                  <div class="badges">
+                    <span class="role-badge">OLED</span>
+                    <span class="role-badge alt">Presentation</span>
+                  </div>
                 </div>
                 <ul>
                   <li>Displayed weather information on the OLED.</li>
