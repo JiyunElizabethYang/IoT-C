@@ -23,15 +23,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/x-icon" href="static/images/sejong.png">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -91,7 +89,6 @@
       vertical-align: middle;
     }
 
-    /* Better spacing between buttons */
     .publication-links .link-block {
       margin: 0 0.3rem;
     }
@@ -125,6 +122,60 @@
       margin: 0.35rem 0;
       line-height: 1.4;
     }
+
+    /* Roles styling */
+    .roles-grid {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .role-card {
+      grid-column: span 12;
+      border-radius: 15px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+      background: linear-gradient(45deg, rgba(242,0,181,0.10), rgba(0,119,255,0.10));
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    @media (min-width: 900px) {
+      .role-card { grid-column: span 4; }
+    }
+
+    .role-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .role-name {
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    .role-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(121,40,202,0.18);
+      border: 1px solid rgba(121,40,202,0.25);
+      white-space: nowrap;
+    }
+
+    .role-card ul {
+      margin-top: 0.5rem;
+    }
+
+    .role-card li {
+      margin: 0.35rem 0;
+      line-height: 1.4;
+    }
   </style>
 </head>
 
@@ -141,7 +192,6 @@
             </h1>
 
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://jungminpark68.github.io/IoT-Project-C/" target="_blank">Jeongmin Park</a><sup>1</sup>,
               </span>
@@ -172,7 +222,6 @@
             <div class="column has-text-centered">
               <div class="publication-links">
 
-                <!-- Project Slides -->
                 <span class="link-block">
                   <a href="https://github.com/zubair1811" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
@@ -183,7 +232,6 @@
                   </a>
                 </span>
 
-                <!-- Github link -->
                 <span class="link-block">
                   <a href="https://github.com/zubair1811/IoT-Project.git" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
@@ -224,7 +272,6 @@
               <video poster="" id="tree" autoplay controls muted loop height="100%"
                      style="display: block; width: 100%; border-radius: 15px;
                             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
-                <!-- Your video here -->
                 <source src="static/videos/pet-demo.mp4" type="video/mp4">
               </video>
             </div>
@@ -253,7 +300,11 @@
               : Receives weather data from KMA through its API Hub, simulates a custom GPS location, and generates LED signals and graphs on an OLED display.
               </p>
 
-              <img src="static\images\overview photo.png" alt="Teaser GIF" height="100%">
+              <!-- ✅ Centered image (UPDATED) -->
+              <div class="has-text-centered">
+                <img src="static\images\overview photo.png" alt="Teaser GIF"
+                     style="max-width: 100%; height: auto; display: inline-block;">
+              </div>
 
               <p class="subtitle has-text-centered"></p>
             </div>
@@ -299,7 +350,7 @@
     </div>
   </section>
 
-  <!-- Timeline (NEW) -->
+  <!-- Timeline -->
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -353,6 +404,65 @@
               </div>
 
             </div><!-- /timeline-wrap -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles (NEW) -->
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+
+            <h2 class="title is-3"
+                style="background: linear-gradient(45deg, #f200b571, #eb419f8e, #0077ff5b, #2881cad7);
+                       color: white; padding: 10px; border-radius: 10px;
+                       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+              Roles
+            </h2>
+
+            <div class="roles-grid">
+
+              <div class="role-card">
+                <div class="role-header">
+                  <p class="role-name">Jiho Park</p>
+                  <span class="role-badge">Leader</span>
+                </div>
+                <ul>
+                  <li>Implemented the GPS module (hosted a web server and retrieved the current location).</li>
+                  <li>Created the coordinate-to-address conversion header file (<code>location.h</code>).</li>
+                  <li>Designed the conversion algorithm (latitude/longitude → grid coordinates).</li>
+                </ul>
+              </div>
+
+              <div class="role-card">
+                <div class="role-header">
+                  <p class="role-name">Jeongmin Park</p>
+                  <span class="role-badge">Data & Visualization</span>
+                </div>
+                <ul>
+                  <li>Integrated the weather API and handled data processing.</li>
+                  <li>Implemented OLED graph visualization features.</li>
+                </ul>
+              </div>
+
+              <div class="role-card">
+                <div class="role-header">
+                  <p class="role-name">Jiyun Yang</p>
+                  <span class="role-badge">Display & Presentation</span>
+                </div>
+                <ul>
+                  <li>Displayed weather information on the OLED.</li>
+                  <li>Developed the LED sensor control code based on weather conditions.</li>
+                  <li>Created and prepared presentation materials (PPT, webpage, GitHub, etc.).</li>
+                </ul>
+              </div>
+
+            </div><!-- /roles-grid -->
 
           </div>
         </div>
