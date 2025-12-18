@@ -72,7 +72,8 @@ The system follows a modular workflow:
 
 - VS Code  
 - Wokwi (ESP32 Simulator)  
-- C / C++ (Arduino Framework)  
+- C / C++ (Arduino Framework)
+- Python (server)  
 - HTTPClient  
 - KMA Weather API (XML)  
 - OLED Display (Text & Graph Visualization)
