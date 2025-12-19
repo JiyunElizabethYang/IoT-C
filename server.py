@@ -4,53 +4,56 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-current_lat = 37.5665 # 기본값 (서울 시청)
+current_lat = 37.5665  # Default value (Seoul City Hall)
 current_lon = 126.9780
-status_message = "초기화 안됨"
+status_message = "Not initialized"
 
 async def get_windows_location():
     global current_lat, current_lon, status_message
     
-    print("\n--- [위치 진단 시작] ---")
+    print("\n--- [Location Diagnostics Start] ---")
     
     try:
-        # 1. 권한 요청 (Geolocator 생성)
+        # 1. Request permission (Create Geolocator)
         locator = wdg.Geolocator()
         
-        # 2. 권한 상태 확인
+        # 2. Check access status
         access_status = await wdg.Geolocator.request_access_async()
         
-        print(f"👉 권한 상태 코드: {access_status}")
+        print(f"👉 Access status code: {access_status}")
         # 0: Unspecified, 1: Allowed, 2: Denied
         
         if access_status == wdg.GeolocationAccessStatus.DENIED:
-            print("❌ [오류] 윈도우 설정에서 위치 접근이 '거부'되었습니다.")
-            print("   -> 설정 > 개인정보 > 위치 > '데스크톱 앱 허용'을 켜주세요.")
-            status_message = "권한 거부됨"
+            print("❌ [Error] Location access is DENIED in Windows settings.")
+            print("   -> Please enable: Settings > Privacy > Location > Allow desktop apps")
+            status_message = "Permission denied"
             return
 
-        print("🔍 위성/Wi-Fi 신호 검색 중... (최대 10초 소요)")
+        print("🔍 Searching for GPS/Wi-Fi signals... (may take up to 10 seconds)")
         
-        # 3. 위치 가져오기 (타임아웃 설정 추가)
-        # 10초 동안 못 찾으면 포기
-        pos = await asyncio.wait_for(locator.get_geoposition_async(), timeout=10.0)
+        # 3. Get location (with timeout)
+        # Give up if location is not acquired within 10 seconds
+        pos = await asyncio.wait_for(
+            locator.get_geoposition_async(),
+            timeout=10.0
+        )
         
         current_lat = pos.coordinate.point.position.latitude
         current_lon = pos.coordinate.point.position.longitude
-        status_message = "위치 확보 성공"
+        status_message = "Location acquired successfully"
         
-        print(f"✅ [성공] 현재 위치: {current_lat}, {current_lon}")
+        print(f"✅ [Success] Current location: {current_lat}, {current_lon}")
 
     except asyncio.TimeoutError:
-        print("⏰ [오류] 시간 초과! (실내라서 GPS/Wi-Fi 신호를 못 잡았습니다)")
-        status_message = "시간 초과 (신호 없음)"
+        print("⏰ [Error] Timeout! (GPS/Wi-Fi signal not available, possibly indoors)")
+        status_message = "Timeout (no signal)"
     except Exception as e:
-        print(f"❌ [시스템 오류] {e}")
-        status_message = f"시스템 오류: {str(e)}"
+        print(f"❌ [System Error] {e}")
+        status_message = f"System error: {str(e)}"
 
 @app.route('/location', methods=['GET'])
 def get_location():
-    print(f"[요청] 상태: {status_message} -> 좌표: {current_lat}, {current_lon}")
+    print(f"[Request] Status: {status_message} -> Coordinates: {current_lat}, {current_lon}")
     return jsonify({
         "lat": current_lat,
         "lon": current_lon,
@@ -59,10 +62,10 @@ def get_location():
     })
 
 if __name__ == '__main__':
-    # 비동기 루프 실행
+    # Run asynchronous event loop
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     loop.run_until_complete(get_windows_location())
     
-    print("\n🚀 서버 시작 (http://0.0.0.0:5000/location)")
+    print("\n🚀 Server started (http://0.0.0.0:5000/location)")
     app.run(host='0.0.0.0', port=5000)
